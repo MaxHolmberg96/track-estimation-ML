@@ -85,7 +85,7 @@ def checkIfMaxInSurronding(accumulator, r, t, nrBinsRho, nrBinsTheta):
         for tt in range(t - area, t + area + 1):
             if rt == r and t == tt:
                 continue
-            if 0 <= rt < nrBinsRho and 0 <= tt < nrBinsTheta and midValue <= accumulator[rt, tt]:
+            if 0 <= rt < nrBinsRho and 0 <= tt < nrBinsTheta and midValue < accumulator[rt, tt]:
                 return False
     return True
 
