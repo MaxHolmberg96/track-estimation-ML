@@ -79,6 +79,16 @@ def findMaxValues(accumulator, nrBinsRho, nrBinsTheta, threshhold):
     return points
 
 def checkIfMaxInSurronding(accumulator, r, t, nrBinsRho, nrBinsTheta):
+    """
+    Check if this index (r, t) is the max among its values (i.e check if surrounding is less)
+
+    :param accumulator: The Hough space.
+    :param r: the rho index
+    :param t: the theta index
+    :param nrBinsRho: the number of bins to be used for rho in the accumulator (Hough space).
+    :param nrBinsTheta: the number of bins to be used for theta in the accumulator (Hough space).
+    :return: returns true if the values is the largest in the window and false otherwise
+    """
     area = 1
     midValue = accumulator[r, t]
     for rt in range(r - area, r + area + 1):
