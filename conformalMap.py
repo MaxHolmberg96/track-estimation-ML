@@ -27,6 +27,8 @@ def inverseConformalMapping(lines):
         # Unsure about why this is happening...
         if rho == 0:
             continue
+        if sin(theta) == 0:
+            continue
         curve = (sin(theta) / (2 * rho)) * np.array([cos(theta) / sin(theta), 1, sqrt(pow(-cos(theta) / sin(theta), 2) + 1)])
         circles = np.vstack([circles, curve])
         
